@@ -33,19 +33,9 @@ class OdtTransform:
         sio = StringIO()
         ooo = OOoPy(infile=StringIO(orig), outfile=sio)
         ooo_mimetype = ooo.mimetype
-        ppp = Transforms.get_meta(ooo_mimetype)
-#        ttt = Transformer(ooo_mimetype, ppp)
-        import pdb; pdb.set_trace()
+        
         ttt = Transformer(ooo_mimetype,
-                          Transforms.Autoupdate(),
-                          Transforms.Editinfo(),
-        #                  Transforms.Field_Replace(prio=99,
-         #                                          replace=cb),
-                          Transforms.Field_Replace(replace={'plone_version' : '4.3.2-sunny-day-beta',
-                                                            }
-                                                  ),
-                          Transforms.Addpagebreak_Style(),
-                          Transforms.Addpagebreak()
+                          Transforms.Field_Replace(replace=kwargs.get('mapper', {})),
                          )
         ttt.transform(ooo)
         ooo.close()

@@ -5,6 +5,7 @@ from redomino.odttransforms.testing import REDOMINO_ODTTRANSFORMS_INTEGRATION_TE
 
 
 class TestOdtTemplateTransform(unittest.TestCase):
+    """ Quick and dirty tests about odt transforms """
     layer = REDOMINO_ODTTRANSFORMS_INTEGRATION_TESTING
 
     def test_input_file(self):
@@ -25,7 +26,8 @@ class TestOdtTemplateTransform(unittest.TestCase):
         converter = pt.convertTo(target_mimetype='application/vnd.oasis.opendocument.text.transformed',
                                  orig=file_contents,
                                  mimetype='application/vnd.oasis.opendocument.text',
-                                 plone_version='4.3.2-sunny-day-beta')
+                                 mapper=dict(plone_version='4.3.2-sunny-day-beta'),
+                                )
         data = converter.getData()
         from zipfile import ZipFile
         from StringIO import StringIO
