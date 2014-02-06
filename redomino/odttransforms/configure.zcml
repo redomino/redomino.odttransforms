@@ -15,5 +15,16 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
+  <!-- setup handlers -->
+  <genericsetup:importStep
+      name="redomino_odttransforms_handlers"
+      title="Redomino otd transforms handlers"
+      description=""
+      handler=".setuphandlers.setupVarious">
+      <depends name="content"/>
+      <depends name="toolset"/>
+      <depends name="actions"/>
+  </genericsetup:importStep>
+
   
 </configure>

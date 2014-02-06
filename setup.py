@@ -3,10 +3,12 @@ import os
 
 version = '0.1'
 
+tests_require = ['plone.app.testing']
+
 setup(name='redomino.odttransforms',
       version=version,
       description="ODT templating transforms",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.md").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
@@ -26,13 +28,14 @@ setup(name='redomino.odttransforms',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'ooopy',
       ],
+      tests_require=tests_require,
+      extras_require=dict(tests=tests_require),
       entry_points="""
       # -*- Entry points: -*-
 
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
       )
