@@ -12,7 +12,7 @@ This plugin is meant for developers, it could be used for generating odt files, 
 Usage
 -----
 
-Code:
+Example:
 
     from zope.component import getUtility
     from Products.PortalTransforms.interfaces import IPortalTransformsTool
@@ -25,6 +25,13 @@ Code:
                                            )
     transformed_odt_contents = converter.getData()
 
+
+Tests
+-----
+
+How to launch tests:
+
+    $ ./bin/test -m redomino.odttransforms
 
 
 Authors
