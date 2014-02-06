@@ -1,5 +1,12 @@
-from Products.PortalTransforms.interfaces import ITransform
+from StringIO import StringIO
+
+from ooopy.Transformer import Transformer
+from ooopy import Transforms
+from ooopy.OOoPy import OOoPy
+
 from zope.interface import implements
+
+from Products.PortalTransforms.interfaces import ITransform
 
 
 class OdtTransform:
@@ -26,10 +33,6 @@ class OdtTransform:
         return self.__name__
 
     def convert(self, orig, data, **kwargs):
-        from ooopy.Transformer import Transformer
-        from ooopy import Transforms
-        from StringIO import StringIO
-        from ooopy.OOoPy import OOoPy
         sio = StringIO()
         ooo = OOoPy(infile=StringIO(orig), outfile=sio)
         ooo_mimetype = ooo.mimetype
