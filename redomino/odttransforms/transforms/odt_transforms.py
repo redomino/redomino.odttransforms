@@ -1,4 +1,4 @@
-from StringIO import StringIO
+from tempfile import TemporaryFile
 
 from ooopy.Transformer import Transformer
 from ooopy import Transforms
@@ -33,17 +33,22 @@ class OdtTransform:
         return self.__name__
 
     def convert(self, orig, data, **kwargs):
-        sio = StringIO()
-        ooo = OOoPy(infile=StringIO(orig), outfile=sio)
-        ooo_mimetype = ooo.mimetype
+        with TemporaryFile() as temp_orig_data:
+            temp_orig_data.write(orig)
+            temp_orig_data.seek(0)
+            with TemporaryFile() as temp_output_data:
+                ooo = OOoPy(infile=temp_orig_data, outfile=temp_output_data)
+                ooo_mimetype = ooo.mimetype
         
-        ttt = Transformer(ooo_mimetype,
-                          Transforms.Field_Replace(replace=kwargs.get('mapper', {})),
-                         )
-        ttt.transform(ooo)
-        ooo.close()
-        ov = sio.getvalue()
-        data.setData(ov)
+                ttt = Transformer(ooo_mimetype,
+                                  Transforms.Field_Replace(replace=kwargs.get('mapper', {})),
+                                 )
+                ttt.transform(ooo)
+                ooo.close()
+                temp_output_data.seek(0)
+                transformed_value = temp_output_data.read()
+
+                data.setData(transformed_value)
         return data
 
 
