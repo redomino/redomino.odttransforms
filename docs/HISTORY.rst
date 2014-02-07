@@ -4,7 +4,14 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Moved all txt/md files to rst (trying to make happy both pypi and github)
+  [davidemoro]
+
+- Added more specific classifiers to setup.py
+  [davidemoro]
+
+- Added CI support with Travis
+  [davidemoro]
 
 
 0.2 (2014-02-06)
