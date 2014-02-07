@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3 (unreleased)
+0.3 (2014-02-07)
 ----------------
 
 - Moved all txt/md files to rst (trying to make happy both pypi and github)
