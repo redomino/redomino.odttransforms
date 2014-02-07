@@ -16,16 +16,16 @@ Usage
 
 Example::
 
-    from zope.component import getUtility
-    from Products.PortalTransforms.interfaces import IPortalTransformsTool
-    file_contents = open('your odt file with variables').read()     # see redomino/odttransforms/tests/input.odt
-    portal_transforms = getUtility(IPortalTransformsTool)
-    converter = portal_transforms.convertTo(target_mimetype='application/vnd.oasis.opendocument.text.transformed',
-                                            orig=file_contents,
-                                            mimetype='application/vnd.oasis.opendocument.text',
-                                            mapper=dict(plone_version='4.3.2-sunny-day-beta'),
-                                           )
-    transformed_odt_contents = converter.getData()
+    >>> from zope.component import getUtility
+    >>> from Products.PortalTransforms.interfaces import IPortalTransformsTool
+    >>> file_contents = open('your odt file with variables').read()     # see redomino/odttransforms/tests/input.odt
+    >>> portal_transforms = getUtility(IPortalTransformsTool)
+    >>> converter = portal_transforms.convertTo(target_mimetype='application/vnd.oasis.opendocument.text.transformed',
+    >>>                                        orig=file_contents,
+    >>>                                        mimetype='application/vnd.oasis.opendocument.text',
+    >>>                                        mapper=dict(plone_version='4.3.2-sunny-day-beta'),
+    >>>                                       )
+    >>> transformed_odt_contents = converter.getData()
 
 
 Tests
