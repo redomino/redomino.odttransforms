@@ -4,7 +4,8 @@ Changelog
 0.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added more tests
+  [davidemoro]
 
 
 0.3 (2014-02-07)
