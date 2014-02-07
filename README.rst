@@ -7,6 +7,8 @@ This products is very simple: it just interpolates odt variables with the given 
 Therefore it performs just variable substitutions, not a real odt templating processor.
 No external bynaries are needed, it depends on http://ooopy.sourceforge.net/.
 
+Tested with ooopy version 1.8.10901.
+
 This plugin is meant for developers, it could be used for generating odt files, write a custom PloneFormGen adapter, etc.
 
 Usage
@@ -28,6 +30,11 @@ Example::
 
 Tests
 -----
+
+Test status:
+
+.. image:: https://secure.travis-ci.org/redomino/redomino.odttransforms.png
+   :target: https://travis-ci.org/redomino/redomino.odttransforms
 
 How to launch tests::
 
