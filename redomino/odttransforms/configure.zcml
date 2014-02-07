@@ -25,6 +25,19 @@
       <depends name="toolset"/>
       <depends name="actions"/>
   </genericsetup:importStep>
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="redomino.odttransforms uninstall"
+      directory="profiles/uninstall"
+      description="Uninstalls redomino.odttransforms"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:importStep
+      name="redomino_odtransforms_uninstall"
+      title="Uninstall import step"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="redomino.odttransforms.setuphandlers.uninstall">
+  </genericsetup:importStep>
 
   
 </configure>

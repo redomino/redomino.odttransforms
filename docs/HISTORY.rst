@@ -7,6 +7,8 @@ Changelog
 - Added more tests
   [davidemoro]
 
+- Added uninstall profile
+  [davidemoro]
 
 0.3 (2014-02-07)
 ----------------
