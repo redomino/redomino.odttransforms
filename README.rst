@@ -12,7 +12,7 @@ This plugin is meant for developers, it could be used for generating odt files, 
 Usage
 -----
 
-Example:
+Example::
 
     from zope.component import getUtility
     from Products.PortalTransforms.interfaces import IPortalTransformsTool
@@ -29,7 +29,7 @@ Example:
 Tests
 -----
 
-How to launch tests:
+How to launch tests::
 
     $ ./bin/test -m redomino.odttransforms
 
